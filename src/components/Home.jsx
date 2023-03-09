@@ -1,9 +1,23 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { getItemsInfo } from '../redux/Home/home';
+
 const Home = () => {
-  const x = 0;
+  const dispatch = useDispatch();
+
+  const handleGetItemsInfo = () => {
+    dispatch(getItemsInfo());
+  };
+
   return (
     <div>
       <h1>Home</h1>
-      <div>{x}</div>
+      <div>
+        Items:
+        <br />
+      </div>
+      <br />
+      <button type="button" onClick={handleGetItemsInfo}>items</button>
     </div>
   );
 };
