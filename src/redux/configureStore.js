@@ -1,9 +1,11 @@
 import logger from 'redux-logger';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import homeReducer from './Home/home';
+import authReducer from './Registration/auth';
 
 const rootReducer = combineReducers({
-  images: homeReducer,
+  items: homeReducer,
+  auth: authReducer,
 });
 
 const store = configureStore({
