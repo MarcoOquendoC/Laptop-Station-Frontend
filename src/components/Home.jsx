@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItemsInfo } from '../redux/Home/home';
 
 const Home = () => {
   const dispatch = useDispatch();
-  let items = [];
-  const handleGetItemsInfo = () => {
+
+  // Use useCallback to 'memoize' the handleGetItemsInfo function
+  const handleGetItemsInfo = useCallback(() => {
     dispatch(getItemsInfo());
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     handleGetItemsInfo();
-  }, []);
+  }, [handleGetItemsInfo]);
 
-  items = useSelector((store) => store.items);
+  const items = useSelector((store) => store.items);
 
   return (
     <div>
