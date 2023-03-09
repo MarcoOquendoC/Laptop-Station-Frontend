@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../api/api';
 
-const SHOW_ITEMS = 'SHOW_ITEMS';
+const GET_ITEMS = 'GET_ITEMS';
 
 const initialState = [];
 
 // Thunk
-const getItemsInfo = createAsyncThunk(SHOW_ITEMS, async () => {
+const getItemsInfo = createAsyncThunk(GET_ITEMS, async () => {
   try {
     return await api.fetchItems();
   } catch (error) {
