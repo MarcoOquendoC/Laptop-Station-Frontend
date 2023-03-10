@@ -7,7 +7,7 @@ function App() {
   const x = 'home';
 
   return (
-    <div className="App">
+    <div className="container">
       <Routes>
         <Route path="/" element={<Home id={x} />} />
       </Routes>
