@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 
 const Home = () => {
@@ -23,9 +24,11 @@ const Home = () => {
         Items:
         {items[0]
           ? items.map((item) => (
-            <div key={item.id}>
-              <p>{item.title}</p>
-            </div>
+            <Link to="/detail" state={item.id} key={item.id}>
+              <div key={item.id}>
+                <p>{item.title}</p>
+              </div>
+            </Link>
           )) : null}
         <br />
       </div>
