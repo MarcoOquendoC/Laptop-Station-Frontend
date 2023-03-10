@@ -1,0 +1,80 @@
+/* -------Globals---------- */
+
+:root {
+  --dark_grey: #333334;
+  --primary: #144172;
+  --secondary: #97BF0E;
+  --light_grey: #F1F1F1;
+  --middle-grey: #BDBDBD;
+  --white: #fff;
+  --semi-white: #ffffffe6;
+  --shadow: #3333334d;
+  --principalFont: 'Catamaran', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--white);
+  font-size: 1.4rem;
+  font-family: var(--principalFont);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: var(--light_grey);
+  }
+}
+
+.desk, 
+.hide {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+
+  .desk {
+    display: flex !important;
+  }
+
+  .mob {
+    display: none;
+  }
+
+}

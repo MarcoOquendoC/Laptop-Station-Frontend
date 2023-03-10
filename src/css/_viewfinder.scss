@@ -1,0 +1,88 @@
+.viewfinder {
+  width: 100%;
+  margin-top: 8rem;
+}
+
+@media (min-width: 768px) {
+  .viewfinder {
+    margin-top: 0;
+    position: relative;
+  }
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0;
+}
+
+@media (min-width: 768px) {
+  .titles {
+    padding: 12rem 0;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+}
+
+h4 {
+  font-size: 1.4;
+  color: var(--middle-grey);
+  font-weight: 600;
+}
+
+.items {
+  display: flex;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .items {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--secondary);
+  position: absolute;
+  height: 8rem;
+  width: 6rem;
+  padding: 2rem;
+  display: flex;
+  top: 60%;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: 9rem;
+    padding: 3rem;
+    top: 50%;
+  }
+}
+
+.left {
+  border-radius: 0 4rem 4rem 0;
+}
+
+.rigth {
+  border-radius: 4rem 0 0 4rem;
+  right: 0;
+}
+
+.last {
+  background-color: var(--middle-grey);
+}
