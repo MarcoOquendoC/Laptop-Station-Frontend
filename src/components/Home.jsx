@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 import menuImg from '../images/menu.svg';
 import logo from '../images/logo_laptop_station.svg';
+import arrowLeft from '../images/left.svg';
+import arrowRight from '../images/rigth.svg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -42,7 +44,11 @@ const Home = () => {
       </div>
 
       <div className="viewfinder">
-        Items:
+        <div className="btn left last"><img src={arrowLeft} alt="rigth" /></div>
+        <div className="titles">
+          <h1>Latest Models</h1>
+          <h4>Please select a Laptop Model</h4>
+        </div>
         {items[0]
           ? items.map((item) => (
             <div key={item.id}>
@@ -50,6 +56,7 @@ const Home = () => {
             </div>
           )) : null}
         <br />
+        <div className="btn rigth"><img src={arrowRight} alt="rigth" /></div>
       </div>
     </>
   );
