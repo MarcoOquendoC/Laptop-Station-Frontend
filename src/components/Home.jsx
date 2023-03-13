@@ -49,13 +49,19 @@ const Home = () => {
           <h1>Latest Models</h1>
           <h4>Please select a Laptop Model</h4>
         </div>
-        {items[0]
-          ? items.map((item) => (
-            <div key={item.id}>
-              <p>{item.title}</p>
-            </div>
-          )) : null}
-        <br />
+        <div className="items">
+
+          {items[0]
+            ? items.map((item) => (
+              <div key={item.id} className="item">
+                <img src={item.image} alt={item.image} />
+                <h2>{item.title}</h2>
+                <h4>{item.item_model}</h4>
+                <p>{item.description}</p>
+              </div>
+            )) : null}
+
+        </div>
         <div className="btn rigth"><img src={arrowRight} alt="rigth" /></div>
       </div>
     </>

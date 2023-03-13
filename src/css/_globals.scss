@@ -1,16 +1,14 @@
 /* -------Globals---------- */
 
-:root {
-  --dark_grey: #333334;
-  --primary: #144172;
-  --secondary: #97BF0E;
-  --light_grey: #F1F1F1;
-  --middle-grey: #BDBDBD;
-  --white: #fff;
-  --semi-white: #ffffffe6;
-  --shadow: #3333334d;
-  --principalFont: 'Catamaran', sans-serif;
-}
+$dark_grey: #333334;
+$primary: #144172;
+$secondary: #97BF0E;
+$light_grey: #F1F1F1;
+$middle-grey: #BDBDBD;
+$white: #fff;
+$semi-white: #ffffffe6;
+$shadow: #3333334d;
+$principalFont: 'Catamaran', sans-serif;
 
 html {
   box-sizing: border-box;
@@ -46,10 +44,10 @@ img {
 }
 
 body {
-  background-color: var(--white);
+  background-color: $white;
   font-size: 1.4rem;
-  font-family: var(--principalFont);
-  color: var(--dark);
+  font-family: $principalFont;
+  color: $dark_grey;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -58,7 +56,7 @@ body {
 
 @media (min-width: 768px) {
   body {
-    background-color: var(--light_grey);
+    background-color: $light_grey;
   }
 }
 

@@ -1,7 +1,7 @@
 .principal {
-  border-bottom: 1px solid var(--middle-grey);
+  border-bottom: 1px solid $middle-grey;
   position: fixed;
-  background-color: var(--white);
+  background-color: $white;
 
   .header {
     display: grid;
@@ -21,41 +21,44 @@
       }
     }
   }
+
   .menunav {
     display: none;
     width: 100%;
     height: 100vh;
-    background-color: var(--semi-white);
+    background-color: $semi-white;
     position: fixed;
     padding: 2rem;
 
-    .menu_text {
-      a {
-        display: block;
-        padding: 1rem 2.5rem;
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        font-weight: bold;
+    .menunav_ul{
+      .menu_text {
+        a {
+          display: block;
+          padding: 1rem 2.5rem;
+          font-size: 1.8rem;
+          text-transform: uppercase;
+          font-weight: bold;
 
-        &:hover{
-          background-color: var(--light_grey);
-          color: var(--dark_grey);
+          &:hover{
+            background-color: $light_grey;
+            color: $dark_grey;
+          }
         }
       }
-    }
-    
-    .select {
-      background-color: var(--secondary);
-      color: var(--white);
-    }
-    
-    .admin {
-      background-color: var(--light_grey);
 
-      a{
-        font-size: 1.4;
-        font-weight: normal;
-        text-transform: none;
+      .select {
+        background-color: $secondary;
+        color: $white;
+      }
+      
+      .admin {
+        background-color: $light_grey;
+  
+        a{
+          font-size: 1.4;
+          font-weight: normal;
+          text-transform: none;
+        }
       }
     }
   }
@@ -66,7 +69,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    border-right: 1px solid var(--middle-grey);
+    border-right: 1px solid $middle-grey;
     border-bottom: none;
     flex-direction: column;
     width: 30rem;
@@ -84,11 +87,11 @@
         }
       }
     }
-  }
-  .menunav {
-    display: block !important;
-    width: 22.5rem !important;
-    position: initial !important;
-    padding: 0 !important;
+    .menunav {
+      display: block !important;
+      width: 22.5rem !important;
+      position: initial !important;
+      padding: 0 !important;
+    }
   }
 }
