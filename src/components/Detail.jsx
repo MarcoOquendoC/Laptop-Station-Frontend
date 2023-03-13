@@ -11,18 +11,14 @@ const Detail = (props) => {
     <>
       <div>
         <div>
-          <img src="default.png" className="image-detail" alt="laptop" />
+          <img src={laptop.image} className="image-detail" alt="laptop" />
         </div>
         <div>
           <h2>{laptop.title}</h2>
-          <p>kajshdjka</p>
-          <p>Asus</p>
-          <p>Asus</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quibusdam.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Tempora magni libero
-          </p>
+          <p>{laptop.item_model}</p>
+          <p>{laptop.brand}</p>
+          <p>{laptop.serial_n}</p>
+          <p>{laptop.description}</p>
         </div>
         <div>
           <button type="button">Reserve</button>
