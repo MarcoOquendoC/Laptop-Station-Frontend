@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Detail = (props) => {
   const { id } = props;
   const laptops = useSelector((state) => state.items);
   const [laptop] = laptops.filter((laptop) => laptop.id === id);
+  const location = useLocation();
+  const [state, updateState] = useState('');
+
+  const handleBack = () => {
+    if (location.pathname === '/details') {
+      updateState(true);
+    } else {
+      updateState(!state);
+    }
+  };
 
   return (
     <>
+      <NavLink to="/" onClick={() => handleBack()}>Back</NavLink>
       <div>
         <div>
           <img src={laptop.image} className="image-detail" alt="laptop" />
@@ -21,7 +33,7 @@ const Detail = (props) => {
           <p>{laptop.description}</p>
         </div>
         <div>
-          <button type="button">Reserve</button>
+          <Link to="/detail/id/reserve" state={id} key={id}>Reserve</Link>
           <button type="button">Edit Item</button>
           <button type="button">Delete Item</button>
         </div>
