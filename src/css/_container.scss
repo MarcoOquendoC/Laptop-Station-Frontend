@@ -1,0 +1,17 @@
+.container {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .container {
+    background-color: $white;
+    height: calc(100vh - 8rem);
+    margin: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 6px $shadow;
+    flex-direction: row;
+  }
+}

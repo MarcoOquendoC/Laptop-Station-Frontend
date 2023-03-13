@@ -1,0 +1,98 @@
+.principal {
+  border-bottom: 1px solid $middle-grey;
+  position: fixed;
+  background-color: $white;
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+
+    .menu {
+      width: 11rem;
+      padding: 3rem;
+    }
+
+    .menu_logo {
+      .logo {
+        width: 15rem;
+      }
+    }
+  }
+
+  .menunav {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: $semi-white;
+    position: fixed;
+    padding: 2rem;
+
+    .menunav_ul {
+      .menu_text {
+        a {
+          display: block;
+          padding: 1rem 2.5rem;
+          font-size: 1.8rem;
+          text-transform: uppercase;
+          font-weight: bold;
+
+          &:hover {
+            background-color: $light_grey;
+            color: $dark_grey;
+          }
+        }
+      }
+
+      .select {
+        background-color: $secondary;
+        color: $white;
+      }
+
+      .admin {
+        background-color: $light_grey;
+
+        .a__admin {
+          font-size: 1.4rem;
+          font-weight: normal;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .principal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-right: 1px solid $middle-grey;
+    border-bottom: none;
+    flex-direction: column;
+    width: 30rem;
+    position: initial;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+
+      .menu_logo {
+        .logo {
+          padding: 5.5rem 0;
+        }
+      }
+    }
+
+    .menunav {
+      display: block !important;
+      width: 22.5rem !important;
+      position: initial !important;
+      padding: 0 !important;
+    }
+  }
+}

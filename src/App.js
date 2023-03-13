@@ -9,7 +9,7 @@ function App() {
   const id = location.state;
 
   return (
-    <div className="App">
+    <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail id={id} />} />
