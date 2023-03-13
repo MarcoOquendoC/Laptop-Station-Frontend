@@ -37,7 +37,7 @@ const Home = () => {
             <li className="menu_text select"><Link to="/">Home</Link></li>
             <li className="menu_text"><Link to="/laptops">Latops</Link></li>
             <li className="menu_text"><Link to="/reserves">Reserves</Link></li>
-            <li className="menu_text admin"><Link to="/addItem">Add item</Link></li>
+            <li className="menu_text admin"><Link className="a__admin" to="/addItem">Add item</Link></li>
             <li className="menu_text"><Link to="/logOut">Log Out</Link></li>
           </ul>
         </nav>

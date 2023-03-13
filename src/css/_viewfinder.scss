@@ -15,12 +15,12 @@
   .left {
     border-radius: 0 4rem 4rem 0;
   }
-  
+
   .rigth {
     border-radius: 4rem 0 0 4rem;
     right: 0;
   }
-  
+
   .last {
     background-color: $middle-grey;
   }
@@ -37,9 +37,9 @@
       text-transform: uppercase;
       letter-spacing: 0.6rem;
     }
-    
+
     h4 {
-      font-size: 1.4;
+      font-size: 1.4rem;
       color: $middle-grey;
       font-weight: 600;
     }
@@ -63,7 +63,7 @@
   .viewfinder {
     margin-top: 0;
     position: relative;
-  
+
     .titles {
       padding: 12rem 0;
     }

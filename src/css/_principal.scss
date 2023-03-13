@@ -30,7 +30,7 @@
     position: fixed;
     padding: 2rem;
 
-    .menunav_ul{
+    .menunav_ul {
       .menu_text {
         a {
           display: block;
@@ -39,7 +39,7 @@
           text-transform: uppercase;
           font-weight: bold;
 
-          &:hover{
+          &:hover {
             background-color: $light_grey;
             color: $dark_grey;
           }
@@ -50,12 +50,12 @@
         background-color: $secondary;
         color: $white;
       }
-      
+
       .admin {
         background-color: $light_grey;
-  
-        a{
-          font-size: 1.4;
+
+        .a__admin {
+          font-size: 1.4rem;
           font-weight: normal;
           text-transform: none;
         }
@@ -76,7 +76,7 @@
     position: initial;
 
     .header {
-      display:flex;
+      display: flex;
       justify-content: center;
       flex-direction: column;
       width: 100%;
@@ -87,6 +87,7 @@
         }
       }
     }
+
     .menunav {
       display: block !important;
       width: 22.5rem !important;

@@ -2,9 +2,9 @@
 
 $dark_grey: #333334;
 $primary: #144172;
-$secondary: #97BF0E;
-$light_grey: #F1F1F1;
-$middle-grey: #BDBDBD;
+$secondary: #97bf0e;
+$light_grey: #f1f1f1;
+$middle-grey: #bdbdbd;
 $white: #fff;
 $semi-white: #ffffffe6;
 $shadow: #3333334d;
@@ -60,13 +60,12 @@ body {
   }
 }
 
-.desk, 
+.desk,
 .hide {
   display: none !important;
 }
 
 @media (min-width: 768px) {
-
   .desk {
     display: flex !important;
   }
@@ -74,5 +73,4 @@ body {
   .mob {
     display: none;
   }
-
 }

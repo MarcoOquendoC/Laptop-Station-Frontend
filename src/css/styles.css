@@ -45,9 +45,10 @@ body {
 
 @media (min-width: 768px) {
   body {
-    background-color: #F1F1F1;
+    background-color: #f1f1f1;
   }
 }
+
 .desk,
 .hide {
   display: none !important;
@@ -57,10 +58,12 @@ body {
   .desk {
     display: flex !important;
   }
+
   .mob {
     display: none;
   }
 }
+
 .container {
   background-color: #fff;
   display: flex;
@@ -74,15 +77,17 @@ body {
     height: calc(100vh - 8rem);
     margin: 4rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 6px rgba(51, 51, 51, 0.3019607843);
+    box-shadow: 0 0 6px rgba(51, 51, 51, 0.3019607843);
     flex-direction: row;
   }
 }
+
 .principal {
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #bdbdbd;
   position: fixed;
   background-color: #fff;
 }
+
 .principal .header {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
@@ -90,13 +95,16 @@ body {
   align-items: center;
   justify-items: center;
 }
+
 .principal .header .menu {
   width: 11rem;
   padding: 3rem;
 }
+
 .principal .header .menu_logo .logo {
   width: 15rem;
 }
+
 .principal .menunav {
   display: none;
   width: 100%;
@@ -105,6 +113,7 @@ body {
   position: fixed;
   padding: 2rem;
 }
+
 .principal .menunav .menunav_ul .menu_text a {
   display: block;
   padding: 1rem 2.5rem;
@@ -112,19 +121,23 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
+
 .principal .menunav .menunav_ul .menu_text a:hover {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   color: #333334;
 }
+
 .principal .menunav .menunav_ul .select {
-  background-color: #97BF0E;
+  background-color: #97bf0e;
   color: #fff;
 }
+
 .principal .menunav .menunav_ul .admin {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
-.principal .menunav .menunav_ul .admin a {
-  font-size: 1.4;
+
+.principal .menunav .menunav_ul .admin .a__admin {
+  font-size: 1.4rem;
   font-weight: normal;
   text-transform: none;
 }
@@ -134,21 +147,24 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    border-right: 1px solid #BDBDBD;
+    border-right: 1px solid #bdbdbd;
     border-bottom: none;
     flex-direction: column;
     width: 30rem;
     position: initial;
   }
+
   .principal .header {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
   }
+
   .principal .header .menu_logo .logo {
     padding: 5.5rem 0;
   }
+
   .principal .menunav {
     display: block !important;
     width: 22.5rem !important;
@@ -156,12 +172,14 @@ body {
     padding: 0 !important;
   }
 }
+
 .viewfinder {
   width: 100%;
   margin-top: 8rem;
 }
+
 .viewfinder .btn {
-  background-color: #97BF0E;
+  background-color: #97bf0e;
   position: absolute;
   height: 8rem;
   width: 6rem;
@@ -169,39 +187,47 @@ body {
   display: flex;
   top: 60%;
 }
+
 .viewfinder .left {
   border-radius: 0 4rem 4rem 0;
 }
+
 .viewfinder .rigth {
   border-radius: 4rem 0 0 4rem;
   right: 0;
 }
+
 .viewfinder .last {
-  background-color: #BDBDBD;
+  background-color: #bdbdbd;
 }
+
 .viewfinder .titles {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10rem 0;
 }
+
 .viewfinder .titles h1 {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.6rem;
 }
+
 .viewfinder .titles h4 {
-  font-size: 1.4;
-  color: #BDBDBD;
+  font-size: 1.4rem;
+  color: #bdbdbd;
   font-weight: 600;
 }
+
 .viewfinder .items {
   display: flex;
   margin-left: 4rem;
   margin-right: 4rem;
   gap: 2rem;
 }
+
 .viewfinder .items .item {
   display: flex;
   flex-direction: column;
@@ -213,13 +239,16 @@ body {
     margin-top: 0;
     position: relative;
   }
+
   .viewfinder .titles {
     padding: 12rem 0;
   }
+
   .viewfinder .items {
     margin-left: 10rem;
     margin-right: 10rem;
   }
+
   .viewfinder .btn {
     width: 9rem;
     padding: 3rem;
