@@ -29,12 +29,12 @@ const NavPrincipal = () => {
 
         <nav className="menunav">
           <ul className="menunav_ul">
-            <li className="menu_text"><Link to="/login">{userName || 'Login'}</Link></li>
+            <li className="menu_text">{userName ? <Link to="/">{userName}</Link> : <Link to="/login">Log in</Link>}</li>
             <li className="menu_text select"><Link to="/">Home</Link></li>
             <li className="menu_text"><Link to="/laptops">Latops</Link></li>
             <li className="menu_text"><Link to="/reserves">Reserves</Link></li>
             <li className="menu_text admin"><Link className="a__admin" to="/addItem">Add item</Link></li>
-            <li className="menu_text"><Link to="/" onClick={handleClick}>Log Out</Link></li>
+            <li className="menu_text">{!userName ? null : <Link to="/" onClick={handleClick}>Log out</Link>}</li>
           </ul>
         </nav>
       </div>

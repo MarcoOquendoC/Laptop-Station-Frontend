@@ -34,7 +34,9 @@ const Session = () => {
         </form>
         <p>
           Or
+          {' '}
           <Link to="/signup">Sign up</Link>
+          {' '}
           if you don&apos;t have an account.
         </p>
       </div>
