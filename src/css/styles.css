@@ -301,6 +301,68 @@ body {
   cursor: pointer;
 }
 
+.viewfinder .register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.viewfinder .register h1 {
+  width: 30rem;
+  text-align: right;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.viewfinder .register .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.viewfinder .register .form__input {
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  border: none;
+  font-size: 1.6rem;
+  width: 30rem;
+  text-align: right;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.viewfinder .register .form__input:nth-child(even) {
+  background-color: #fff;
+}
+
+.viewfinder .register .form__btn {
+  background-color: #97bf0e;
+  padding: 1rem 0;
+  width: 20rem;
+  border-radius: 1rem 0 1rem 0.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 1rem;
+}
+
+.viewfinder .register p {
+  padding: 1rem;
+  color: #333334;
+  margin-top: 1rem;
+}
+
+.viewfinder .register p .orsignup {
+  color: #97bf0e;
+}
+
 @media (min-width: 768px) {
   .viewfinder {
     margin-top: 0;

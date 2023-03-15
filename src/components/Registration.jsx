@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../redux/Registration/auth';
+import NavPrincipal from './NavPrincipal';
 
 const Registration = () => {
   const [firstName, setFirstName] = useState('');
@@ -30,32 +31,25 @@ const Registration = () => {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="first_name">
-            <input onChange={(e) => setFirstName(e.target.value)} id="first_name" type="text" placeholder="first name" />
-          </label>
-          <label htmlFor="last_name">
-            <input onChange={(e) => setLastName(e.target.value)} id="last_name" type="text" placeholder="last name" />
-          </label>
-          <label htmlFor="email">
-            <input onChange={(e) => setEmail(e.target.value)} id="email" type="email" placeholder="email" />
-          </label>
-          <label htmlFor="password">
-            <input onChange={(e) => setPassword(e.target.value)} id="password" type="password" placeholder="password" />
-          </label>
-          <label htmlFor="confirm_password">
-            <input onChange={(e) => setConfirmPassword(e.target.value)} id="confirm_password" type="password" placeholder="confirm password" />
-          </label>
-          <button type="submit">Sign up</button>
-        </form>
-        <p>
-          Or
-          {' '}
-          <Link to="/signup">Log in</Link>
-          {' '}
-          if you already have an account.
-        </p>
+      <NavPrincipal />
+      <div className="viewfinder">
+        <div className="register">
+          <h1>Sign In</h1>
+          <form className="form" onSubmit={handleSubmit}>
+            <input className="form__input" onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="first name" />
+            <input className="form__input" onChange={(e) => setLastName(e.target.value)} type="text" placeholder="last name" />
+            <input className="form__input" onChange={(e) => setEmail(e.target.value)} type="email" placeholder="email" />
+            <input className="form__input" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" />
+            <input className="form__input" onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="confirm password" />
+            <div className="form__input" />
+            <button className="form__btn" type="submit">Sign up</button>
+          </form>
+          <p>
+            Or
+            <Link to="/login" className="orsignup"> Log in </Link>
+            if you already have an account.
+          </p>
+        </div>
       </div>
     </>
   );
