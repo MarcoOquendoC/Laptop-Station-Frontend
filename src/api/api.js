@@ -19,7 +19,10 @@ const loginOptions = (user) => ({
 
 const logoutOptions = () => ({
   method: 'DELETE',
-  headers: { Authorization: localStorage.getItem('token') },
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
 });
 
 // Object of fetch functions
