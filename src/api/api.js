@@ -57,9 +57,7 @@ const api = {
   },
 
   async currentUser() {
-    const response = await fetch(`${baseURL}/current_user`, authorization());
-    const { status: code } = response;
-    if (code === 200) setAuthToken(response);
+    const response = await fetch(`${baseURL}/current_user`, { headers: authorization() });
     const data = await response.json();
     return data;
   },
