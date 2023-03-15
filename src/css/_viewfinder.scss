@@ -126,7 +126,7 @@
     }
   }
 
-  .register{
+  .register {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +146,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      
+
       &__input {
         background-color: $light_grey;
         padding: 1.5rem;
@@ -184,7 +184,6 @@
 
       .orsignup {
         color: $secondary;
-
       }
     }
   }
