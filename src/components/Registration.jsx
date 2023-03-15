@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../redux/Registration/auth';
 
 const Registration = () => {
@@ -11,6 +11,7 @@ const Registration = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const Registration = () => {
       password,
     };
     dispatch(register({ user }));
+    navigate('/');
   };
 
   return (
