@@ -67,6 +67,12 @@ const api = {
     const data = await response.json();
     return data;
   },
+
+  async fetchReserves() {
+    const response = await fetch(`${baseURL}/reserves`, { headers: authorization() });
+    const data = await response.json();
+    return data;
+  },
 };
 
 export default api;
