@@ -51,7 +51,9 @@ const Registration = () => {
         </form>
         <p>
           Or
+          {' '}
           <Link to="/signup">Log in</Link>
+          {' '}
           if you already have an account.
         </p>
       </div>
