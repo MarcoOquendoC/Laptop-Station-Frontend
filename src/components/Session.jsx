@@ -23,14 +23,18 @@ const Session = () => {
       <div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
-            <input onChange={(e) => setEmail(e.target.value)} id="email" type="text" placeholder="email" />
+            <input onChange={(e) => setEmail(e.target.value)} id="email" type="email" placeholder="email" />
           </label>
           <label htmlFor="password">
             <input onChange={(e) => setPassword(e.target.value)} id="password" type="password" placeholder="password" />
           </label>
           <button type="submit">Log in</button>
         </form>
-        <Link to="/signup">Sign up</Link>
+        <p>
+          Or
+          <Link to="/signup">Sign up</Link>
+          if you don&apos;t have an account.
+        </p>
       </div>
     </>
   );
