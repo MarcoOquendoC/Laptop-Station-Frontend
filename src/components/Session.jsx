@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../redux/Registration/auth';
 
 const Session = () => {
@@ -8,6 +8,7 @@ const Session = () => {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ const Session = () => {
       password,
     };
     dispatch(login({ user }));
+    navigate('/');
   };
 
   return (
@@ -23,14 +25,18 @@ const Session = () => {
       <div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
-            <input onChange={(e) => setEmail(e.target.value)} id="email" type="text" placeholder="email" />
+            <input onChange={(e) => setEmail(e.target.value)} id="email" type="email" placeholder="email" />
           </label>
           <label htmlFor="password">
             <input onChange={(e) => setPassword(e.target.value)} id="password" type="password" placeholder="password" />
           </label>
           <button type="submit">Log in</button>
         </form>
-        <Link to="/signup">Sign up</Link>
+        <p>
+          Or
+          <Link to="/signup">Sign up</Link>
+          if you don&apos;t have an account.
+        </p>
       </div>
     </>
   );

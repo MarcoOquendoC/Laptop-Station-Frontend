@@ -19,7 +19,10 @@ const loginOptions = (user) => ({
 
 const logoutOptions = () => ({
   method: 'DELETE',
-  headers: { Authorization: localStorage.getItem('token') },
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
 });
 
 // Object of fetch functions
@@ -54,9 +57,7 @@ const api = {
   },
 
   async currentUser() {
-    const response = await fetch(`${baseURL}/current_user`, authorization());
-    const { status: code } = response;
-    if (code === 200) setAuthToken(response);
+    const response = await fetch(`${baseURL}/current_user`, { headers: authorization() });
     const data = await response.json();
     return data;
   },
