@@ -29,34 +29,31 @@ const Reserve = () => {
     handleGetItemsInfo();
   }, [handleGetItemsInfo]);
 
-  const reserves = useSelector((store) => store.reserves);
+  const userName = useSelector((store) => `${store.auth.first_name} ${store.auth.last_name}`);
 
   return (
     <>
       <Link to={`/detail/${id}`} onClick={() => handleBack()}>Back</Link>
-      <div>
-        <h1>Hola reserva</h1>
-        <form action="">
-          <input type="date" />
-          <input type="number" />
-          <input type="number" />
-        </form>
-        <div className="reserves">
-          <div className="reserve">
-            <h2>
-              Este es el user_id:
+      {
+        userName ? (
+          <div>
+            <h1>
+              {userName}
               {' '}
-              {reserves[0] ? reserves[0].user_id : null}
-            </h2>
-            <p>
-              Fecha:
-              {' '}
-              {reserves[0] ? reserves[0].date : null}
-            </p>
-            <p>laptop: Nombre del item</p>
+              Reserves
+            </h1>
+            <form action="">
+              <input type="date" />
+              <input type="number" />
+              <input type="number" />
+              <button type="submit">Add</button>
+            </form>
+            <div className="reserves">
+              <h2>Reserves</h2>
+            </div>
           </div>
-        </div>
-      </div>
+        ) : <h1>Please login or register to manage reserves</h1>
+      }
     </>
   );
 };
