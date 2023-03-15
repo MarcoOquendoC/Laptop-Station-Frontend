@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import logo from '../images/logo_laptop_station.svg';
 import menuImg from '../images/menu.svg';
-import { logout } from '../redux/Registration/auth';
+import { currentUser, logout } from '../redux/Registration/auth';
 
 const NavPrincipal = () => {
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(logout());
+  };
+
+  const getCurrentUser = () => {
+    console.log('Este en mi console.log');
+    const x = dispatch(currentUser());
+    console.log(x);
   };
 
   return (
@@ -29,6 +35,7 @@ const NavPrincipal = () => {
             <li className="menu_text"><Link to="/reserves">Reserves</Link></li>
             <li className="menu_text admin"><Link className="a__admin" to="/addItem">Add item</Link></li>
             <li className="menu_text"><Link to="/" onClick={handleClick}>Log Out</Link></li>
+            <li className="menu_text"><Link to="/" onClick={getCurrentUser}>Current User</Link></li>
           </ul>
         </nav>
       </div>
