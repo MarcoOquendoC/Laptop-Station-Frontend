@@ -125,6 +125,69 @@
       }
     }
   }
+
+  .register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+
+    h1 {
+      width: 30rem;
+      text-align: right;
+      padding: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+      &__input {
+        background-color: $light_grey;
+        padding: 1.5rem;
+        border: none;
+        font-size: 1.6rem;
+        width: 30rem;
+        text-align: right;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+
+        &:nth-child(even) {
+          background-color: $white;
+        }
+      }
+
+      &__btn {
+        background-color: $secondary;
+        padding: 1rem 0;
+        width: 20rem;
+        border-radius: 1rem 0 1rem 0.5rem;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        margin-top: 1rem;
+      }
+    }
+
+    p {
+      padding: 1rem;
+      color: $dark_grey;
+      margin-top: 1rem;
+
+      .orsignup {
+        color: $secondary;
+
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
