@@ -41,22 +41,22 @@ const Detail = () => {
       {laptop
         ? (
           <div className="viewfinder">
-            <NavLink to="/" onClick={() => handleBack()}>Back</NavLink>
-            <div>
-              <div>
+            <NavLink to="/" onClick={() => handleBack()} className="btn left">Back</NavLink>
+            <div className="details">
+              <div className="detail_img">
                 <img src={laptop.image} className="image-detail" alt="laptop" />
               </div>
-              <div>
-                <h2>{laptop.title}</h2>
-                <p>{laptop.item_model}</p>
-                <p>{laptop.brand}</p>
-                <p>{laptop.serial_n}</p>
+              <div className="details_item">
+                <h1>{laptop.title}</h1>
+                <h4>{laptop.item_model}</h4>
+                <h2>{laptop.brand}</h2>
+                <h4>{laptop.serial_n}</h4>
                 <p>{laptop.description}</p>
-              </div>
-              <div>
-                <Link to="/detail/id/reserve" state={id} key={id}>Reserve</Link>
-                <button type="button">Edit Item</button>
-                <button type="button">Delete Item</button>
+                <div className="details_btn">
+                  <Link to="/detail/id/reserve" state={id} key={id} className="details_btn__reserve">Reserve</Link>
+                  <button className="details_btn__admin" type="button">Edit Item</button>
+                  <button className="details_btn__admin" type="button">Delete Item</button>
+                </div>
               </div>
             </div>
           </div>

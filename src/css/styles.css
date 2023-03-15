@@ -222,16 +222,83 @@ body {
 }
 
 .viewfinder .items {
-  display: flex;
+  display: grid;
   margin-left: 4rem;
   margin-right: 4rem;
-  gap: 2rem;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .viewfinder .items .item {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.viewfinder .details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+}
+
+.viewfinder .details .detail_img {
+  padding: 2rem;
+}
+
+.viewfinder .details .details_item {
+  padding: 3rem;
+}
+
+.viewfinder .details h1 {
+  margin-bottom: 2rem;
+}
+
+.viewfinder .details h2 {
+  text-align: right;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.viewfinder .details h4 {
+  text-align: right;
+  color: #bdbdbd;
+  padding: 1rem;
+}
+
+.viewfinder .details p {
+  border: 1px solid #bdbdbd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.viewfinder .details .details_btn {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.viewfinder .details .details_btn__reserve {
+  background-color: #97bf0e;
+  padding: 1rem 0;
+  width: 20rem;
+  border-radius: 1rem 0 1rem 0.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.viewfinder .details .details_btn__admin {
+  background-color: #f1f1f1;
+  width: 20rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
