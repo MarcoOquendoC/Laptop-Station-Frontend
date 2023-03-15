@@ -47,10 +47,10 @@ const Detail = () => {
                 <img src={laptop.image} className="image-detail" alt="laptop" />
               </div>
               <div className="details_item">
-                <h2>{laptop.title}</h2>
-                <p>{laptop.item_model}</p>
-                <p>{laptop.brand}</p>
-                <p>{laptop.serial_n}</p>
+                <h1>{laptop.title}</h1>
+                <h4>{laptop.item_model}</h4>
+                <h2>{laptop.brand}</h2>
+                <h4>{laptop.serial_n}</h4>
                 <p>{laptop.description}</p>
                 <div className="details_btn">
                   <Link to="/detail/id/reserve" state={id} key={id} className="details_btn__reserve">Reserve</Link>
