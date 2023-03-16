@@ -18,9 +18,6 @@ const getReservesInfo = createAsyncThunk(GET_RESERVES, async () => {
 
 const deleteReserve = createAsyncThunk(DELETE_RESERVE, async (id) => {
   try {
-    console.log(id);
-    console.log(id);
-    console.log(id);
     return await api.deleteReservefetch(id);
   } catch (error) {
     return error.message;
