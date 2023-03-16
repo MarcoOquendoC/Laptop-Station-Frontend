@@ -7,6 +7,7 @@ import Reserve from './components/Reserve';
 import Reservations from './components/Reservations';
 import Session from './components/Session';
 import Registration from './components/Registration';
+import AddItem from './components/AddItem';
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
     <div className="container">
       <Routes>
         <Route path="/login" element={<Session />} />
+        <Route path="/addItem" element={<AddItem />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/" element={<Home />} />
         <Route path="/detail/:itemId" element={<Detail id={id} />} />
