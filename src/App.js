@@ -8,6 +8,7 @@ import Reservations from './components/Reservations';
 import Session from './components/Session';
 import Registration from './components/Registration';
 import AddItem from './components/AddItem';
+import DeleteItems from './components/DeleteItems';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Session />} />
         <Route path="/addItem" element={<AddItem />} />
+        <Route path="/deleteItems" element={<DeleteItems />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/" element={<Home />} />
         <Route path="/detail/:itemId" element={<Detail id={id} />} />
