@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addItem } from '../redux/Registration/auth';
+import { addItem } from '../redux/Home/home';
 import NavPrincipal from './NavPrincipal';
 
 const AddItem = () => {
@@ -37,7 +37,7 @@ const AddItem = () => {
         auth.first_name ? (
           <div className="viewfinder">
             <div className="register">
-              <h1>Log In</h1>
+              <h1>New Laptop</h1>
               <form className="form" onSubmit={handleSubmit}>
                 <input className="form__input" onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Title" />
                 <input className="form__input" onChange={(e) => setModel(e.target.value)} type="text" placeholder="Model" />
