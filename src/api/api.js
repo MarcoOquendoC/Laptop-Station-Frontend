@@ -42,6 +42,23 @@ const deleteReserveOptions = () => ({
   },
 });
 
+const addItemOptions = (item) => ({
+  method: 'post',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+  body: JSON.stringify(item),
+});
+
+const deleteItemOptions = () => ({
+  method: 'delete',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+});
+
 // Object of fetch functions
 const api = {
   async register(user) {
@@ -81,6 +98,18 @@ const api = {
 
   async fetchItems() {
     const response = await fetch(`${baseURL}/items`);
+    const data = await response.json();
+    return data;
+  },
+
+  async addItemfetch(item) {
+    const response = await fetch(`${baseURL}/items`, addItemOptions(item));
+    const data = await response.json();
+    return data;
+  },
+
+  async deleteItemfetch() {
+    const response = await fetch(`${baseURL}/items`, deleteItemOptions());
     const data = await response.json();
     return data;
   },
