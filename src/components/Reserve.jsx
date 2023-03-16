@@ -7,7 +7,6 @@ import { getReservesInfo, addReserve, deleteReserve } from '../redux/Reserve/res
 import NavPrincipal from './NavPrincipal';
 
 const Reserve = () => {
-  // const navigate = useNavigate();
   const params = useParams();
   const { itemId } = params;
 
@@ -15,7 +14,7 @@ const Reserve = () => {
   const reserves = useSelector((store) => store.reserves);
 
   const [state, updateState] = useState('');
-  const [date, setDate] = useState('2000-12-31');
+  const [date, setDate] = useState('2023-12-14');
   const location = useLocation();
 
   const handleBack = () => {
@@ -32,14 +31,13 @@ const Reserve = () => {
     dispatch(getReservesInfo());
   }, [dispatch]);
 
-  const addReservation = (date) => {
+  const addReservation = () => {
     const reserve = {
       date,
       user_id: auth.id,
       item_id: itemId,
     };
     dispatch(addReserve(reserve));
-    // navigate('/reserves');
   };
 
   const handleDelete = (reserveId) => {
@@ -58,13 +56,13 @@ const Reserve = () => {
               {' '}
               Reserves
             </h1>
-            <form onSubmit={() => addReservation(date)}>
+            <form onSubmit={addReservation}>
               <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000-12-31" />
               <button type="submit">Add</button>
             </form>
             <div className="reserves">
               {
-                reserves.map((reserve) => (
+                reserves.filter((r) => r.item_id === Number(itemId)).map((reserve) => (
                   <div key={reserve.id}>
                     <strong>{reserve.title}</strong>
                     {': '}
