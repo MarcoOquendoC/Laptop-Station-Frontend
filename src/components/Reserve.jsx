@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservesInfo } from '../redux/Reserve/reserve';
+import api from '../api/api';
 
 const Reserve = () => {
   const params = useParams();
@@ -28,6 +29,10 @@ const Reserve = () => {
   useEffect(() => {
     handleGetItemsInfo();
   }, [handleGetItemsInfo]);
+
+  const handleDelete = (id) => {
+    api.deleteReservefetch(id);
+  };
 
   const userName = useSelector((store) => `${store.auth.first_name} ${store.auth.last_name}`);
   const reserves = useSelector((store) => store.reserves);
@@ -56,6 +61,7 @@ const Reserve = () => {
                     <strong>{reserve.title}</strong>
                     {': '}
                     <span>{reserve.date}</span>
+                    <button type="button" onClick={handleDelete(console.log(reserve.id))}>🗑</button>
                   </div>
                 ))
               }
