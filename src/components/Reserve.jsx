@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservesInfo } from '../redux/Reserve/reserve';
-import api from '../api/api';
+import { getReservesInfo, deleteReserve } from '../redux/Reserve/reserve';
+import NavPrincipal from './NavPrincipal';
 
 const Reserve = () => {
   const params = useParams();
@@ -21,17 +21,12 @@ const Reserve = () => {
 
   const dispatch = useDispatch();
 
-  // Use useCallback to 'memoize' the handleGetItemsInfo function
-  const handleGetItemsInfo = useCallback(() => {
+  useEffect(() => {
     dispatch(getReservesInfo());
   }, [dispatch]);
 
-  useEffect(() => {
-    handleGetItemsInfo();
-  }, [handleGetItemsInfo]);
-
   const handleDelete = (id) => {
-    api.deleteReservefetch(id);
+    dispatch(deleteReserve(id));
   };
 
   const userName = useSelector((store) => `${store.auth.first_name} ${store.auth.last_name}`);
@@ -39,6 +34,7 @@ const Reserve = () => {
 
   return (
     <>
+      <NavPrincipal />
       <Link to={`/detail/${id}`} onClick={() => handleBack()}>Back</Link>
       {
         userName ? (
@@ -61,7 +57,7 @@ const Reserve = () => {
                     <strong>{reserve.title}</strong>
                     {': '}
                     <span>{reserve.date}</span>
-                    <button type="button" onClick={handleDelete(console.log(reserve.id))}>🗑</button>
+                    <button type="button" onClick={() => handleDelete(reserve.id)}>🗑</button>
                   </div>
                 ))
               }
