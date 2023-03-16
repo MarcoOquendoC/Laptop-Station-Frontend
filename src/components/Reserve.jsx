@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import {
+  Link, useLocation, useParams,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservesInfo, deleteReserve } from '../redux/Reserve/reserve';
+import { getReservesInfo, addReserve, deleteReserve } from '../redux/Reserve/reserve';
 import NavPrincipal from './NavPrincipal';
-import { currentUser } from '../redux/Registration/auth';
 
 const Reserve = () => {
+  // const navigate = useNavigate();
   const params = useParams();
-  const itemId = params.id;
-  console.log(itemId);
+  const { itemId } = params;
+
+  const auth = useSelector((store) => store.auth);
+  const reserves = useSelector((store) => store.reserves);
 
   const [state, updateState] = useState('');
-  const [date, setDate] = useState('2000/12/31');
+  const [date, setDate] = useState('2000-12-31');
   const location = useLocation();
 
   const handleBack = () => {
@@ -28,27 +32,18 @@ const Reserve = () => {
     dispatch(getReservesInfo());
   }, [dispatch]);
 
-  const handleDelete = (id) => {
-    dispatch(deleteReserve(id));
-  };
-
-  const auth = useSelector((store) => store.auth);
-  const reserves = useSelector((store) => store.reserves);
-
-  const addReservation = () => {
-    const requestBody = {
-      user_id: auth.id,
+  const addReservation = (date) => {
+    const reserve = {
       date,
+      user_id: auth.id,
       item_id: itemId,
     };
-    dispatch(createReservation(requestBody)).then((response) => {
-      if (response.error) {
-        responseMessage(response.error.message, 'danger');
-      } else {
-        responseMessage('Pet room reserved succesfully', 'success');
-      }
-      close();
-    });
+    dispatch(addReserve(reserve));
+    // navigate('/reserves');
+  };
+
+  const handleDelete = (reserveId) => {
+    dispatch(deleteReserve(reserveId));
   };
 
   return (
@@ -56,18 +51,16 @@ const Reserve = () => {
       <NavPrincipal />
       <Link to={`/detail/${itemId}`} onClick={() => handleBack()}>Back</Link>
       {
-        userName ? (
+        auth.first_name ? (
           <div>
             <h1>
-              {userName}
+              {`${auth.first_name} ${auth.last_name}`}
               {' '}
               Reserves
             </h1>
-            <form action="">
-              <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000/12/31" />
-              {/* <input type="number" />
-              <input type="number" /> */}
-              <button type="button" onClick={() => addReservation()}>Add</button>
+            <form onSubmit={() => addReservation(date)}>
+              <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000-12-31" />
+              <button type="submit">Add</button>
             </form>
             <div className="reserves">
               {
