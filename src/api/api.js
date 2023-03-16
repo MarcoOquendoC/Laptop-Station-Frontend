@@ -104,7 +104,6 @@ const api = {
 
   async addItemfetch(item) {
     const response = await fetch(`${baseURL}/items`, addItemOptions(item));
-    console.log(item, response);
     const data = await response.json();
     return data;
   },

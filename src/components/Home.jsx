@@ -14,7 +14,6 @@ const Home = () => {
   }, [dispatch]);
 
   const items = useSelector((store) => store.items);
-  const userId = useSelector((store) => store.auth.id) || 'unlogged';
 
   return (
     <>

@@ -18,7 +18,6 @@ const getItemsInfo = createAsyncThunk(GET_ITEMS, async () => {
 
 const addItem = createAsyncThunk(ADD_ITEM, async (item) => {
   try {
-    console.log(item)
     return await api.addItemfetch(item);
   } catch (error) {
     return error.message;
