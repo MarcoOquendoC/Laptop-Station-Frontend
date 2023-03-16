@@ -3,12 +3,15 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservesInfo, deleteReserve } from '../redux/Reserve/reserve';
 import NavPrincipal from './NavPrincipal';
+import { currentUser } from '../redux/Registration/auth';
 
 const Reserve = () => {
   const params = useParams();
-  const { id } = params;
+  const itemId = params.id;
+  console.log(itemId);
 
   const [state, updateState] = useState('');
+  const [date, setDate] = useState('2000/12/31');
   const location = useLocation();
 
   const handleBack = () => {
@@ -29,13 +32,29 @@ const Reserve = () => {
     dispatch(deleteReserve(id));
   };
 
-  const userName = useSelector((store) => `${store.auth.first_name} ${store.auth.last_name}`);
+  const auth = useSelector((store) => store.auth);
   const reserves = useSelector((store) => store.reserves);
+
+  const addReservation = () => {
+    const requestBody = {
+      user_id: auth.id,
+      date,
+      item_id: itemId,
+    };
+    dispatch(createReservation(requestBody)).then((response) => {
+      if (response.error) {
+        responseMessage(response.error.message, 'danger');
+      } else {
+        responseMessage('Pet room reserved succesfully', 'success');
+      }
+      close();
+    });
+  };
 
   return (
     <>
       <NavPrincipal />
-      <Link to={`/detail/${id}`} onClick={() => handleBack()}>Back</Link>
+      <Link to={`/detail/${itemId}`} onClick={() => handleBack()}>Back</Link>
       {
         userName ? (
           <div>
@@ -45,10 +64,10 @@ const Reserve = () => {
               Reserves
             </h1>
             <form action="">
-              <input type="date" />
-              <input type="number" />
-              <input type="number" />
-              <button type="submit">Add</button>
+              <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000/12/31" />
+              {/* <input type="number" />
+              <input type="number" /> */}
+              <button type="button" onClick={() => addReservation()}>Add</button>
             </form>
             <div className="reserves">
               {
