@@ -3,7 +3,7 @@ import api from '../../api/api';
 
 const GET_RESERVES = 'GET_RESERVES';
 // const POST_RESERVE = 'POST_RESERVE';
-// const DELETE_RESERVE = 'DELETE_RESERVE';
+const DELETE_RESERVE = 'DELETE_RESERVE';
 
 const initialState = [];
 
@@ -16,6 +16,17 @@ const getReservesInfo = createAsyncThunk(GET_RESERVES, async () => {
   }
 });
 
+const deleteReserve = createAsyncThunk(DELETE_RESERVE, async (id) => {
+  try {
+    console.log(id);
+    console.log(id);
+    console.log(id);
+    return await api.deleteReservefetch(id);
+  } catch (error) {
+    return error.message;
+  }
+});
+
 // reducer
 export const itemSlice = createSlice({
   name: 'reserves',
@@ -23,8 +34,9 @@ export const itemSlice = createSlice({
   reducers: { },
   extraReducers: {
     [getReservesInfo.fulfilled]: (state, action) => action.payload,
+    [deleteReserve.fulfilled]: (state, action) => action.payload,
   },
 });
 
-export { getReservesInfo };
+export { getReservesInfo, deleteReserve };
 export default itemSlice.reducer;
