@@ -25,6 +25,14 @@ const logoutOptions = () => ({
   },
 });
 
+const deleteReserveOptions = () => ({
+  method: 'delete',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+});
+
 // Object of fetch functions
 const api = {
   async register(user) {
@@ -70,6 +78,12 @@ const api = {
 
   async fetchReserves() {
     const response = await fetch(`${baseURL}/reserves`, { headers: authorization() });
+    const data = await response.json();
+    return data;
+  },
+
+  async deleteReservefetch(id) {
+    const response = await fetch(`${baseURL}/reserves/${id}`, deleteReserveOptions());
     const data = await response.json();
     return data;
   },
