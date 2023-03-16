@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Link,
-  NavLink,
-  useLocation,
-  useParams,
+  Link, NavLink, useLocation, useParams,
 } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 import NavPrincipal from './NavPrincipal';
 
 const Detail = () => {
   const params = useParams();
-  const { id } = params;
+  const { itemId } = params;
   const location = useLocation();
   const dispatch = useDispatch();
 
@@ -21,10 +18,10 @@ const Detail = () => {
 
   const [state, updateState] = useState('');
   const laptops = useSelector((store) => store.items);
-  const [laptop] = laptops.filter((laptop) => laptop.id === (Number(id)));
+  const [laptop] = laptops.filter((laptop) => laptop.id === (Number(itemId)));
 
   const handleBack = () => {
-    if (location.pathname === '/detail/:id') {
+    if (location.pathname === '/detail/:itemId') {
       updateState(true);
     } else {
       updateState(!state);
@@ -49,7 +46,7 @@ const Detail = () => {
                 <h4>{laptop.serial_n}</h4>
                 <p>{laptop.description}</p>
                 <div className="details_btn">
-                  <Link to={`/detail/${id}/reserves`} state={id} key={id} className="details_btn__reserve">Reserve</Link>
+                  <Link to={`/detail/${itemId}/reserves`} state={itemId} key={itemId} className="details_btn__reserve">Reserve</Link>
                   <button className="details_btn__admin" type="button">Edit Item</button>
                   <button className="details_btn__admin" type="button">Delete Item</button>
                 </div>
