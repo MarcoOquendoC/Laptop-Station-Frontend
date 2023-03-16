@@ -34,7 +34,7 @@ const NavPrincipal = () => {
             <li className="menu_text"><Link to="/laptops">Latops</Link></li>
             <li className="menu_text"><Link to="/reserves">Reserves</Link></li>
             <li className="menu_text admin"><Link className="a__admin" to="/addItem">Add item</Link></li>
-            <li className="menu_text">{!userName ? null : <Link to="/" onClick={handleClick}>Log out</Link>}</li>
+            <li className="menu_text">{!userName ? null : <Link to="/" onClick={() => handleClick()}>Log out</Link>}</li>
           </ul>
         </nav>
       </div>
