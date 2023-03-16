@@ -33,7 +33,7 @@ const Home = () => {
 
           {items[0]
             ? items.map((item) => (
-              <Link to={`/detail/${item.id}`} state={item.id} key={item.id}>
+              <Link to={`/detail/${item.id}`} state={item.id} key={item.id} data-testid="laptop-card">
                 <div key={item.id} className="item">
                   <img src={item.image} alt={item.image} />
                   <h2>{item.title}</h2>

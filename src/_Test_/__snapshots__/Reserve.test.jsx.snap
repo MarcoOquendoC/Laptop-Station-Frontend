@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Reserve should match the snapshot 1`] = `
+Array [
+  <a
+    href="/detail/undefined"
+    onClick={[Function]}
+  >
+    Back
+  </a>,
+  <div>
+    <h1>
+      Hola reserva
+    </h1>
+    <form
+      action=""
+    >
+      <input
+        type="date"
+      />
+      <input
+        type="number"
+      />
+      <input
+        type="number"
+      />
+    </form>
+    <div
+      className="reserves"
+    >
+      <div
+        className="reserve"
+      >
+        <h2>
+          Este es el user_id:
+           
+        </h2>
+        <p>
+          Fecha:
+           
+        </p>
+        <p>
+          laptop: Nombre del item
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

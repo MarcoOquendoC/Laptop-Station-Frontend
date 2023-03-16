@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home should match the snapshot 1`] = `
+Array [
+  <div
+    className="principal"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="menu mob"
+      >
+        <img
+          alt="menu"
+          src="menu.svg"
+        />
+      </div>
+      <div
+        className="menu_logo"
+      >
+        <img
+          alt="logo"
+          className="logo"
+          src="logo_laptop_station.svg"
+        />
+      </div>
+      <div
+        className="menu mob"
+      />
+    </div>
+    <nav
+      className="menunav"
+    >
+      <ul
+        className="menunav_ul"
+      >
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Log in
+          </a>
+        </li>
+        <li
+          className="menu_text select"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/laptops"
+            onClick={[Function]}
+          >
+            Latops
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/reserves"
+            onClick={[Function]}
+          >
+            Reserves
+          </a>
+        </li>
+        <li
+          className="menu_text admin"
+        >
+          <a
+            className="a__admin"
+            href="/addItem"
+            onClick={[Function]}
+          >
+            Add item
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        />
+      </ul>
+    </nav>
+  </div>,
+  <div
+    className="viewfinder"
+  >
+    <div
+      className="btn left last"
+    >
+      <img
+        alt="rigth"
+        src="left.svg"
+      />
+    </div>
+    <div
+      className="titles"
+    >
+      <h1>
+        Latest Models
+      </h1>
+      <h4>
+        Please select a Laptop Model
+      </h4>
+    </div>
+    <div
+      className="items"
+    />
+    <div
+      className="btn rigth"
+    >
+      <img
+        alt="rigth"
+        src="rigth.svg"
+      />
+    </div>
+  </div>,
+]
+`;
