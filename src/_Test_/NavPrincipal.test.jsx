@@ -1,10 +1,10 @@
-import '@testing-library/jest-dom';
-import { BrowserRouter as Router } from "react-router-dom";
-import renderer from "react-test-renderer";
+import { getByText } from '@testing-library/jest-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import { waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import NavPrincipal from '../components/NavPrincipal';
-import store from "../redux/configureStore";
+import store from '../redux/configureStore';
 
 describe('Testing Home', () => {
   let nav;

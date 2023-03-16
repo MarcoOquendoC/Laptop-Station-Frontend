@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import { getByAltText, getByText } from '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { screen, waitFor } from '@testing-library/react';

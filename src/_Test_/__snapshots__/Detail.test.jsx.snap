@@ -68,7 +68,7 @@ exports[`Testing Detail should match the snapshot 1`] = `
         className="menu_text"
       >
         <a
-          href="/reserves"
+          href="/reservations"
           onClick={[Function]}
         >
           Reserves

@@ -46,7 +46,7 @@ const Detail = () => {
                 <h4>{laptop.serial_n}</h4>
                 <p>{laptop.description}</p>
                 <div className="details_btn">
-                  <Link to={`/detail/${id}/reserves`} state={id} key={id} className="details_btn__reserve" data-testid="reserve-link">Reserve</Link>
+                  <Link to={`/detail/${itemId}/reserves`} state={itemId} key={itemId} className="details_btn__reserve" data-testid="reserve-link">Reserve</Link>
                   <button className="details_btn__admin" type="button">Edit Item</button>
                   <button className="details_btn__admin" type="button">Delete Item</button>
                 </div>

@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
-import { BrowserRouter as Router } from "react-router-dom";
-import renderer from "react-test-renderer";
+import { BrowserRouter as Router } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import { screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Registration from '../components/Registration';
-import store from "../redux/configureStore";
+import store from '../redux/configureStore';
 
 describe('Testing Home', () => {
   let signup;

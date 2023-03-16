@@ -69,7 +69,7 @@ Array [
           className="menu_text"
         >
           <a
-            href="/reserves"
+            href="/reservations"
             onClick={[Function]}
           >
             Reserves

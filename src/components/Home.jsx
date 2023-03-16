@@ -14,7 +14,8 @@ const Home = () => {
   }, [dispatch]);
 
   const items = useSelector((store) => store.items);
-  const userId = useSelector((store) => store.auth.id) || 'unlogged';
+  // esto me marco error de linter porque no se usaba en ninguna linea
+  // const userId = useSelector((store) => store.auth.id) || 'unlogged';
 
   return (
     <>
