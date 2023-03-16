@@ -30,6 +30,7 @@ const Reserve = () => {
   }, [handleGetItemsInfo]);
 
   const userName = useSelector((store) => `${store.auth.first_name} ${store.auth.last_name}`);
+  const reserves = useSelector((store) => store.reserves);
 
   return (
     <>
@@ -49,7 +50,15 @@ const Reserve = () => {
               <button type="submit">Add</button>
             </form>
             <div className="reserves">
-              <h2>Reserves</h2>
+              {
+                reserves.map((reserve) => (
+                  <div key={reserve.id}>
+                    <strong>{reserve.title}</strong>
+                    {': '}
+                    <span>{reserve.date}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         ) : <h1>Please login or register to manage reserves</h1>
