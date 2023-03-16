@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Link,
@@ -15,13 +15,9 @@ const Detail = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const handleGetItemsInfo = useCallback(() => {
+  useEffect(() => {
     dispatch(getItemsInfo());
   }, [dispatch]);
-
-  useEffect(() => {
-    handleGetItemsInfo();
-  }, [handleGetItemsInfo]);
 
   const [state, updateState] = useState('');
   const laptops = useSelector((store) => store.items);
