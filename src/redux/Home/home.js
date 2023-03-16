@@ -16,9 +16,10 @@ const getItemsInfo = createAsyncThunk(GET_ITEMS, async () => {
   }
 });
 
-const addItem = createAsyncThunk(ADD_ITEM, async () => {
+const addItem = createAsyncThunk(ADD_ITEM, async (item) => {
   try {
-    return await api.addItemfetch();
+    console.log(item)
+    return await api.addItemfetch(item);
   } catch (error) {
     return error.message;
   }
@@ -39,8 +40,8 @@ export const itemSlice = createSlice({
   reducers: { },
   extraReducers: {
     [getItemsInfo.fulfilled]: (state, action) => action.payload,
-    [addItem.fulfilled]: (state) => state,
-    [deleteItem.fulfilled]: (state) => state,
+    [addItem.fulfilled]: (state, action) => action.payload,
+    [deleteItem.fulfilled]: (state, action) => action.payload,
   },
 });
 
