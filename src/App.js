@@ -4,6 +4,7 @@ import {
 import Home from './components/Home';
 import Detail from './components/Detail';
 import Reserve from './components/Reserve';
+import Reservations from './components/Reservations';
 import Session from './components/Session';
 import Registration from './components/Registration';
 
@@ -17,8 +18,9 @@ function App() {
         <Route path="/login" element={<Session />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/" element={<Home />} />
-        <Route path="/detail/:id" element={<Detail id={id} />} />
-        <Route path="/detail/:id/reserves" element={<Reserve />} />
+        <Route path="/detail/:itemId" element={<Detail id={id} />} />
+        <Route path="/detail/:itemId/reserves" element={<Reserve />} />
+        <Route path="/reservations" element={<Reservations />} />
       </Routes>
     </div>
   );

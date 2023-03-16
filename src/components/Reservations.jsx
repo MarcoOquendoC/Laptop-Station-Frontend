@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Link, useLocation, useParams,
+  Link, useLocation,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservesInfo, addReserve, deleteReserve } from '../redux/Reserve/reserve';
+import { getReservesInfo, deleteReserve } from '../redux/Reserve/reserve';
 import NavPrincipal from './NavPrincipal';
 
 const Reserve = () => {
-  const params = useParams();
-  const { itemId } = params;
-
   const auth = useSelector((store) => store.auth);
   const reserves = useSelector((store) => store.reserves);
 
   const [state, updateState] = useState('');
-  const [date, setDate] = useState('2023-12-14');
   const location = useLocation();
 
   const handleBack = () => {
@@ -31,15 +27,6 @@ const Reserve = () => {
     dispatch(getReservesInfo());
   }, [dispatch]);
 
-  const addReservation = () => {
-    const reserve = {
-      date,
-      user_id: auth.id,
-      item_id: itemId,
-    };
-    dispatch(addReserve(reserve));
-  };
-
   const handleDelete = (reserveId) => {
     dispatch(deleteReserve(reserveId));
   };
@@ -47,22 +34,18 @@ const Reserve = () => {
   return (
     <>
       <NavPrincipal />
-      <Link to={`/detail/${itemId}`} onClick={() => handleBack()}>Back</Link>
+      <Link to="/" onClick={() => handleBack()}>Back</Link>
       {
         auth.first_name ? (
           <div>
             <h1>
               {`${auth.first_name} ${auth.last_name}`}
               {' '}
-              Reserves
+              Reservations
             </h1>
-            <form onSubmit={addReservation}>
-              <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000-12-31" />
-              <button type="submit">Add</button>
-            </form>
             <div className="reserves">
               {
-                reserves.filter((r) => r.item_id === Number(itemId)).map((reserve) => (
+                reserves.map((reserve) => (
                   <div key={reserve.id}>
                     <strong>{reserve.title}</strong>
                     {': '}
