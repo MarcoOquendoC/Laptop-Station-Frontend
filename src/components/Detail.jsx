@@ -1,34 +1,27 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Link,
-  NavLink,
-  useLocation,
-  useParams,
+  Link, NavLink, useLocation, useParams,
 } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 import NavPrincipal from './NavPrincipal';
 
 const Detail = () => {
   const params = useParams();
-  const { id } = params;
+  const { itemId } = params;
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const handleGetItemsInfo = useCallback(() => {
+  useEffect(() => {
     dispatch(getItemsInfo());
   }, [dispatch]);
 
-  useEffect(() => {
-    handleGetItemsInfo();
-  }, [handleGetItemsInfo]);
-
   const [state, updateState] = useState('');
   const laptops = useSelector((store) => store.items);
-  const [laptop] = laptops.filter((laptop) => laptop.id === (Number(id)));
+  const [laptop] = laptops.filter((laptop) => laptop.id === (Number(itemId)));
 
   const handleBack = () => {
-    if (location.pathname === '/detail/:id') {
+    if (location.pathname === '/detail/:itemId') {
       updateState(true);
     } else {
       updateState(!state);

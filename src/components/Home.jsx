@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
@@ -9,16 +9,12 @@ import arrowRight from '../images/rigth.svg';
 const Home = () => {
   const dispatch = useDispatch();
 
-  // Use useCallback to 'memoize' the handleGetItemsInfo function
-  const handleGetItemsInfo = useCallback(() => {
+  useEffect(() => {
     dispatch(getItemsInfo());
   }, [dispatch]);
 
-  useEffect(() => {
-    handleGetItemsInfo();
-  }, [handleGetItemsInfo]);
-
   const items = useSelector((store) => store.items);
+  const userId = useSelector((store) => store.auth.id) || 'unlogged';
 
   return (
     <>
