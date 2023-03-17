@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Detail should match the snapshot 1`] = `
+<div
+  className="principal"
+>
+  <div
+    className="header"
+  >
+    <div
+      className="menu mob"
+    >
+      <img
+        alt="menu"
+        src="menu.svg"
+      />
+    </div>
+    <div
+      className="menu_logo"
+    >
+      <img
+        alt="logo"
+        className="logo"
+        src="logo_laptop_station.svg"
+      />
+    </div>
+    <div
+      className="menu mob"
+    />
+  </div>
+  <nav
+    className="menunav"
+  >
+    <ul
+      className="menunav_ul"
+    >
+      <li
+        className="menu_text"
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          Log in
+        </a>
+      </li>
+      <li
+        className="menu_text select"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="menu_text"
+      >
+        <a
+          href="/laptops"
+          onClick={[Function]}
+        >
+          Latops
+        </a>
+      </li>
+      <li
+        className="menu_text"
+      >
+        <a
+          href="/reservations"
+          onClick={[Function]}
+        >
+          Reserves
+        </a>
+      </li>
+      <li
+        className="menu_text admin"
+      >
+        <a
+          className="a__admin"
+          href="/addItem"
+          onClick={[Function]}
+        >
+          Add item
+        </a>
+      </li>
+      <li
+        className="menu_text"
+      />
+    </ul>
+  </nav>
+</div>
+`;

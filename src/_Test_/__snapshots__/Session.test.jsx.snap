@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home should match the snapshot 1`] = `
+Array [
+  <div
+    className="principal"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="menu mob"
+      >
+        <img
+          alt="menu"
+          src="menu.svg"
+        />
+      </div>
+      <div
+        className="menu_logo"
+      >
+        <img
+          alt="logo"
+          className="logo"
+          src="logo_laptop_station.svg"
+        />
+      </div>
+      <div
+        className="menu mob"
+      />
+    </div>
+    <nav
+      className="menunav"
+    >
+      <ul
+        className="menunav_ul"
+      >
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Log in
+          </a>
+        </li>
+        <li
+          className="menu_text select"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/laptops"
+            onClick={[Function]}
+          >
+            Latops
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        >
+          <a
+            href="/reservations"
+            onClick={[Function]}
+          >
+            Reserves
+          </a>
+        </li>
+        <li
+          className="menu_text admin"
+        >
+          <a
+            className="a__admin"
+            href="/addItem"
+            onClick={[Function]}
+          >
+            Add item
+          </a>
+        </li>
+        <li
+          className="menu_text"
+        />
+      </ul>
+    </nav>
+  </div>,
+  <div
+    className="viewfinder"
+  >
+    <div
+      className="register"
+    >
+      <h1>
+        Log In
+      </h1>
+      <form
+        className="form"
+        onSubmit={[Function]}
+      >
+        <input
+          className="form__input"
+          onChange={[Function]}
+          placeholder="email"
+          type="email"
+        />
+        <input
+          className="form__input"
+          onChange={[Function]}
+          placeholder="password"
+          type="password"
+        />
+        <div
+          className="form__input"
+        />
+        <button
+          className="form__btn"
+          type="submit"
+        >
+          Log in
+        </button>
+      </form>
+      <p>
+        Or
+        <a
+          className="orsignup"
+          href="/signup"
+          onClick={[Function]}
+        >
+           Sign up 
+        </a>
+        if you don't have an account.
+      </p>
+    </div>
+  </div>,
+]
+`;
