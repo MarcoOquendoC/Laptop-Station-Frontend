@@ -74,6 +74,7 @@ const api = {
     const { status: code } = response;
     if (code === 200) {
       setAuthToken(response);
+      window.location.reload();
       const data = await response.json();
       return data;
     }
@@ -97,13 +98,14 @@ const api = {
   },
 
   async fetchItems() {
-    const response = await fetch(`${baseURL}/items`);
+    const response = await fetch(`${baseURL}/items`, { headers: authorization() });
     const data = await response.json();
     return data;
   },
 
   async addItemfetch(item) {
     const response = await fetch(`${baseURL}/items`, addItemOptions(item));
+    window.location.reload();
     const data = await response.json();
     return data;
   },
