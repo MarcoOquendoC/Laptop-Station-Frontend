@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 import NavPrincipal from './NavPrincipal';
+import arrowLeft from '../images/left.svg';
 
 const Detail = () => {
   const params = useParams();
@@ -34,7 +35,7 @@ const Detail = () => {
       {laptop
         ? (
           <div className="viewfinder">
-            <NavLink to="/" onClick={() => handleBack()} className="btn left">Back</NavLink>
+            <NavLink to="/" onClick={() => handleBack()} className="btn left"><img src={arrowLeft} alt="left" /></NavLink>
             <div className="details">
               <div className="detail_img">
                 <img src={laptop.image} className="image-detail" alt="laptop" />

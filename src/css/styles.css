@@ -48,7 +48,6 @@ body {
     background-color: #f1f1f1;
   }
 }
-
 .desk,
 .hide {
   display: none !important;
@@ -58,12 +57,10 @@ body {
   .desk {
     display: flex !important;
   }
-
   .mob {
     display: none;
   }
 }
-
 .container {
   background-color: #fff;
   display: flex;
@@ -81,13 +78,11 @@ body {
     flex-direction: row;
   }
 }
-
 .principal {
   border-bottom: 1px solid #bdbdbd;
   position: fixed;
   background-color: #fff;
 }
-
 .principal .header {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
@@ -95,16 +90,13 @@ body {
   align-items: center;
   justify-items: center;
 }
-
 .principal .header .menu {
   width: 11rem;
   padding: 3rem;
 }
-
 .principal .header .menu_logo .logo {
   width: 15rem;
 }
-
 .principal .menunav {
   display: none;
   width: 100%;
@@ -113,7 +105,6 @@ body {
   position: fixed;
   padding: 2rem;
 }
-
 .principal .menunav .menunav_ul .menu_text a {
   display: block;
   padding: 1rem 2.5rem;
@@ -121,21 +112,17 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
-
 .principal .menunav .menunav_ul .menu_text a:hover {
   background-color: #f1f1f1;
   color: #333334;
 }
-
 .principal .menunav .menunav_ul .select {
   background-color: #97bf0e;
   color: #fff;
 }
-
 .principal .menunav .menunav_ul .admin {
   background-color: #f1f1f1;
 }
-
 .principal .menunav .menunav_ul .admin .a__admin {
   font-size: 1.4rem;
   font-weight: normal;
@@ -153,18 +140,15 @@ body {
     width: 30rem;
     position: initial;
   }
-
   .principal .header {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
   }
-
   .principal .header .menu_logo .logo {
     padding: 5.5rem 0;
   }
-
   .principal .menunav {
     display: block !important;
     width: 22.5rem !important;
@@ -172,12 +156,10 @@ body {
     padding: 0 !important;
   }
 }
-
 .viewfinder {
   width: 100%;
   margin-top: 8rem;
 }
-
 .viewfinder .btn {
   background-color: #97bf0e;
   position: absolute;
@@ -187,40 +169,33 @@ body {
   display: flex;
   top: 60%;
 }
-
 .viewfinder .left {
   border-radius: 0 4rem 4rem 0;
 }
-
 .viewfinder .rigth {
   border-radius: 4rem 0 0 4rem;
   right: 0;
 }
-
 .viewfinder .last {
   background-color: #bdbdbd;
 }
-
 .viewfinder .titles {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10rem 0;
 }
-
 .viewfinder .titles h1 {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.6rem;
 }
-
 .viewfinder .titles h4 {
   font-size: 1.4rem;
   color: #bdbdbd;
   font-weight: 600;
 }
-
 .viewfinder .items {
   display: grid;
   margin-left: 4rem;
@@ -228,13 +203,11 @@ body {
   gap: 4rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
 .viewfinder .items .item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .viewfinder .details {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -242,37 +215,30 @@ body {
   height: 100%;
   gap: 2rem;
 }
-
 .viewfinder .details .detail_img {
   padding: 2rem;
 }
-
 .viewfinder .details .details_item {
   padding: 3rem;
 }
-
 .viewfinder .details h1 {
   margin-bottom: 2rem;
 }
-
 .viewfinder .details h2 {
   text-align: right;
   padding: 1rem;
   background-color: #f1f1f1;
 }
-
 .viewfinder .details h4 {
   text-align: right;
   color: #bdbdbd;
   padding: 1rem;
 }
-
 .viewfinder .details p {
   border: 1px solid #bdbdbd;
   border-radius: 0.5rem;
   padding: 1rem;
 }
-
 .viewfinder .details .details_btn {
   margin-top: 4rem;
   display: flex;
@@ -280,7 +246,6 @@ body {
   align-items: center;
   gap: 1rem;
 }
-
 .viewfinder .details .details_btn__reserve {
   background-color: #97bf0e;
   padding: 1rem 0;
@@ -292,15 +257,14 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-
 .viewfinder .details .details_btn__admin {
+  background-color: #f1f1f1;
   background-color: #f1f1f1;
   width: 20rem;
   border: none;
   padding: 1rem;
   cursor: pointer;
 }
-
 .viewfinder .register {
   display: flex;
   justify-content: center;
@@ -308,7 +272,6 @@ body {
   height: 100%;
   flex-direction: column;
 }
-
 .viewfinder .register h1 {
   width: 30rem;
   text-align: right;
@@ -316,14 +279,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
-
 .viewfinder .register .form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
 .viewfinder .register .form__input {
   background-color: #f1f1f1;
   padding: 1.5rem;
@@ -334,11 +295,9 @@ body {
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
-
 .viewfinder .register .form__input:nth-child(even) {
   background-color: #fff;
 }
-
 .viewfinder .register .form__btn {
   background-color: #97bf0e;
   padding: 1rem 0;
@@ -352,15 +311,55 @@ body {
   border: none;
   margin-top: 1rem;
 }
-
 .viewfinder .register p {
   padding: 1rem;
   color: #333334;
   margin-top: 1rem;
 }
-
 .viewfinder .register p .orsignup {
   color: #97bf0e;
+}
+.viewfinder .reserves {
+  height: 100%;
+  padding: 5rem 3rem 3rem 10rem;
+}
+.viewfinder .reserves h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.viewfinder .reserves .reserve_list .reserve_details {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr 1fr;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+}
+.viewfinder .reserves .reserve_list .reserve_details .model,
+.viewfinder .reserves .reserve_list .reserve_details .date,
+.viewfinder .reserves .reserve_list .reserve_details .action {
+  padding: 1rem;
+  text-align: center;
+  border-right: 1px solid #bdbdbd;
+}
+.viewfinder .reserves .reserve_list .reserve_details .action_btn {
+  background-color: #f1f1f1;
+  border: 1px solid #333334;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.viewfinder .reserves .reserve_list .reserve_details .title {
+  font-weight: bold;
+}
+
+.msg_alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.8rem;
 }
 
 @media (min-width: 768px) {
@@ -368,16 +367,13 @@ body {
     margin-top: 0;
     position: relative;
   }
-
   .viewfinder .titles {
     padding: 12rem 0;
   }
-
   .viewfinder .items {
     margin-left: 10rem;
     margin-right: 10rem;
   }
-
   .viewfinder .btn {
     width: 9rem;
     padding: 3rem;

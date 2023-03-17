@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <NavPrincipal />
       <div className="viewfinder">
-        <div className="btn left last"><img src={arrowLeft} alt="rigth" /></div>
+        <div className="btn left last"><img src={arrowLeft} alt="left" /></div>
         <div className="titles">
           <h1>Latest Models</h1>
           <h4>Please select a Laptop Model</h4>
