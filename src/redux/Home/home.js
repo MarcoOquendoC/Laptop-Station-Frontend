@@ -26,7 +26,6 @@ const addItem = createAsyncThunk(ADD_ITEM, async (item) => {
 
 const deleteItem = createAsyncThunk(DELETE_ITEM, async (id) => {
   try {
-    console.log(id);
     return await api.deleteItemfetch(id);
   } catch (error) {
     return error.message;
