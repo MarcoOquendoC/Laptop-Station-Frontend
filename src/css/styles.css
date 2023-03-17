@@ -336,8 +336,7 @@ body {
   color: #97bf0e;
 }
 .viewfinder .reserves {
-  height: 100%;
-  padding: 5rem 3rem 3rem 10rem;
+  padding: 3rem;
 }
 .viewfinder .reserves h1 {
   text-align: center;
@@ -396,3 +395,26 @@ body {
     top: 50%;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+.new-reservation-cont {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.btn1 {
+  margin: 1rem;
+}
+
+.reserves {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.new-reservation-title {
+  margin: 1rem;
+}
