@@ -46,16 +46,29 @@
   }
 
   .items {
-    display: grid;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    display: flex;
     gap: 4rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    height: 43rem;
+    width: calc(100% - 39rem);
+    overflow: hidden;
+    overflow-x: scroll;
 
     .item {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 26rem;
+
+      .delete_btn {
+        background-color: $secondary;
+        background-color: #97bf0e;
+        padding: 1rem;
+        color: $white;
+        font-size: 1.65rem;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 0.5rem;
+      }
     }
   }
 

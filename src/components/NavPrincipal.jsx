@@ -21,7 +21,7 @@ const NavPrincipal = () => {
     <>
       <div className="principal">
         <div className="header">
-          <div className="menu mob"><img src={menuImg} alt="menu" /></div>
+          <div className="menu mob" data-hamburger><img src={menuImg} alt="menu" /></div>
           <div className="menu_logo">
             <img className="logo" src={logo} alt="logo" />
           </div>
