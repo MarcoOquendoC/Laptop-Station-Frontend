@@ -39,8 +39,6 @@ const Reserve = () => {
         auth.first_name ? (
           <div>
             <h1>
-              {`${auth.first_name} ${auth.last_name}`}
-              {' '}
               Reservations
             </h1>
             <div className="reserves">
