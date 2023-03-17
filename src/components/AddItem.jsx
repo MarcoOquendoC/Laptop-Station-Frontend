@@ -15,10 +15,12 @@ const AddItem = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const item = {
+      user_id: auth.id,
       title,
       item_model: model,
       serial_n: serial,
