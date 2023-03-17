@@ -14,7 +14,6 @@ const Home = () => {
   }, [dispatch]);
 
   const items = useSelector((store) => store.items);
-  const userId = useSelector((store) => store.auth.id) || 'unlogged';
 
   return (
     <>
@@ -29,7 +28,7 @@ const Home = () => {
 
           {items[0]
             ? items.map((item) => (
-              <Link to={`/detail/${item.id}`} state={item.id} key={userId}>
+              <Link to={`/detail/${item.id}`} state={item.id} key={item.id}>
                 <div key={item.id} className="item">
                   <img src={item.image} alt={item.image} />
                   <h2>{item.title}</h2>
