@@ -363,6 +363,54 @@ body {
   color: #97bf0e;
 }
 
+.viewfinder .reserves {
+  height: 100%;
+  padding: 5rem 3rem 3rem 10rem;
+}
+
+.viewfinder .reserves h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.viewfinder .reserves .reserve_list .reserve_details {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr 1fr;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+}
+
+.viewfinder .reserves .reserve_list .reserve_details .model,
+.viewfinder .reserves .reserve_list .reserve_details .date,
+.viewfinder .reserves .reserve_list .reserve_details .action {
+  padding: 1rem;
+  text-align: center;
+  border-right: 1px solid #bdbdbd;
+}
+
+.viewfinder .reserves .reserve_list .reserve_details .action_btn {
+  background-color: #f1f1f1;
+  border: 1px solid #333334;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.viewfinder .reserves .reserve_list .reserve_details .title {
+  font-weight: bold;
+}
+
+.msg_alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.8rem;
+}
+
 @media (min-width: 768px) {
   .viewfinder {
     margin-top: 0;

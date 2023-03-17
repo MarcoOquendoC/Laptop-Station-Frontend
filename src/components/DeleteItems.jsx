@@ -22,29 +22,31 @@ const Home = () => {
   return (
     <>
       <NavPrincipal />
-      {
-        auth.first_name ? (
-          <div className="viewfinder">
-            <div className="btn left last"><img src={arrowLeft} alt="rigth" /></div>
-            <div className="items">
+      <div className="viewfinder">
+        {
+          auth.first_name ? (
+            <div className="viewfinder">
+              <div className="btn left last"><img src={arrowLeft} alt="rigth" /></div>
+              <div className="items">
 
-              {items[0]
-                ? items.map((item) => (
-                  <div key={item.id}>
-                    <div key={item.id} className="item">
-                      <img src={item.image} alt={item.image} />
-                      <h2>{item.title}</h2>
-                      <br />
-                      <button type="button" onClick={() => handleDelete(item.id)}>Delete Item</button>
+                {items[0]
+                  ? items.map((item) => (
+                    <div key={item.id}>
+                      <div key={item.id} className="item">
+                        <img src={item.image} alt={item.image} />
+                        <h2>{item.title}</h2>
+                        <br />
+                        <button type="button" onClick={() => handleDelete(item.id)}>Delete Item</button>
+                      </div>
                     </div>
-                  </div>
-                )) : null}
+                  )) : null}
 
+              </div>
+              <div className="btn rigth"><img src={arrowRight} alt="rigth" /></div>
             </div>
-            <div className="btn rigth"><img src={arrowRight} alt="rigth" /></div>
-          </div>
-        ) : <h1>Please login to manage items</h1>
-      }
+          ) : <div className="msg_alert">Please login to manage items</div>
+        }
+      </div>
     </>
   );
 };
