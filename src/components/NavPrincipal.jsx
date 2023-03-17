@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import logo from '../images/logo_laptop_station.svg';
@@ -7,8 +7,9 @@ import { currentUser, logout } from '../redux/Registration/auth';
 
 const NavPrincipal = () => {
   const dispatch = useDispatch();
-
-  dispatch(currentUser());
+  useEffect(() => {
+    dispatch(currentUser());
+  }, [dispatch]);
 
   const userName = useSelector((store) => store.auth.first_name);
 
