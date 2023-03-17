@@ -124,7 +124,6 @@ const api = {
 
   async addReservefetch(reserve) {
     const response = await fetch(`${baseURL}/reserves`, addReserveOptions(reserve));
-    window.location.reload();
     const data = await response.json();
     return data;
   },
