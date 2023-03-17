@@ -21,7 +21,7 @@ const NavPrincipal = () => {
     <>
       <div className="principal">
         <div className="header">
-          <div className="menu mob"><img src={menuImg} alt="menu" /></div>
+          <div className="menu mob" data-hamburger><img src={menuImg} alt="menu" /></div>
           <div className="menu_logo">
             <img className="logo" src={logo} alt="logo" />
           </div>
@@ -34,7 +34,7 @@ const NavPrincipal = () => {
             <li className="menu_text"><Link to="/">Latops</Link></li>
             <li className="menu_text"><Link to="/reservations">Reservations</Link></li>
             <li className="menu_text"><Link to="/addItem">Add item</Link></li>
-            <li className="menu_text select"><Link to="/deleteItems">Delete Items</Link></li>
+            <li className="menu_text"><Link to="/deleteItems">Delete Items</Link></li>
             <li className="menu_text">{!userName ? null : <Link to="/" onClick={() => handleClick()}>Log out</Link>}</li>
           </ul>
         </nav>

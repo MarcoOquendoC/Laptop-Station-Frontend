@@ -54,6 +54,10 @@ body {
   display: none !important;
 }
 
+.nav--visible {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .desk {
     display: flex !important;
@@ -222,17 +226,29 @@ body {
 }
 
 .viewfinder .items {
-  display: grid;
-  margin-left: 4rem;
-  margin-right: 4rem;
+  display: flex;
   gap: 4rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: 43rem;
+  width: calc(100% - 39rem);
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 .viewfinder .items .item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 26rem;
+}
+
+.viewfinder .items .item .delete_btn {
+  background-color: #97bf0e;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.65rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 .viewfinder .details {
@@ -364,8 +380,11 @@ body {
 }
 
 .viewfinder .reserves {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
-  padding: 5rem 3rem 3rem 10rem;
 }
 
 .viewfinder .reserves h1 {
@@ -401,6 +420,10 @@ body {
 
 .viewfinder .reserves .reserve_list .reserve_details .title {
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .msg_alert {
@@ -431,4 +454,20 @@ body {
     padding: 3rem;
     top: 50%;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.new-reservation-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.btn1 {
+  margin: 1rem;
+}
+
+.new-reservation-title {
+  margin: 1rem;
+}

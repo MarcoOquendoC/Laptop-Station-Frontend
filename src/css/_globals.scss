@@ -65,6 +65,10 @@ body {
   display: none !important;
 }
 
+.nav--visible {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .desk {
     display: flex !important;

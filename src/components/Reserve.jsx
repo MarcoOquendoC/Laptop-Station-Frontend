@@ -3,7 +3,7 @@ import {
   Link, useLocation, useParams, useNavigate,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservesInfo, addReserve, deleteReserve } from '../redux/Reserve/reserve';
+import { getReservesInfo, addReserve } from '../redux/Reserve/reserve';
 import NavPrincipal from './NavPrincipal';
 import arrowLeft from '../images/left.svg';
 
@@ -12,7 +12,6 @@ const Reserve = () => {
   const { itemId } = params;
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
-  const reserves = useSelector((store) => store.reserves);
 
   const [state, updateState] = useState('');
   const [date, setDate] = useState('2023-12-14');
@@ -42,10 +41,6 @@ const Reserve = () => {
     navigate('/reservations');
   };
 
-  const handleDelete = (reserveId) => {
-    dispatch(deleteReserve(reserveId));
-  };
-
   return (
     <>
       <NavPrincipal />
@@ -53,27 +48,15 @@ const Reserve = () => {
         <Link to={`/detail/${itemId}`} onClick={() => handleBack()} className="btn left"><img src={arrowLeft} alt="left" /></Link>
         {
           auth.first_name ? (
-            <div>
-              <h1>
+            <div className="new-reservation-cont">
+              <h1 className="new-reservation-title">
                 New Reservation
               </h1>
               <form onSubmit={addReservation}>
                 <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000-12-31" />
                 <button type="submit">Add</button>
               </form>
-              <div className="reserves">
-                <h2>Reservations for this laptop</h2>
-                {
-                  reserves.filter((r) => r.item_id === Number(itemId)).map((reserve) => (
-                    <div key={reserve.id}>
-                      <strong>{reserve.title}</strong>
-                      {': '}
-                      <span>{reserve.date}</span>
-                      <button type="button" onClick={() => handleDelete(reserve.id)}>🗑</button>
-                    </div>
-                  ))
-                }
-              </div>
+
             </div>
           ) : <div className="msg_alert">Please login or register to manage Reserves</div>
         }

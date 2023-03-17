@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Link, NavLink, useLocation, useParams,
+  Link, NavLink, useParams,
 } from 'react-router-dom';
 import { getItemsInfo } from '../redux/Home/home';
 import NavPrincipal from './NavPrincipal';
@@ -10,24 +10,14 @@ import arrowLeft from '../images/left.svg';
 const Detail = () => {
   const params = useParams();
   const { itemId } = params;
-  const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getItemsInfo());
   }, [dispatch]);
 
-  const [state, updateState] = useState('');
   const laptops = useSelector((store) => store.items);
   const [laptop] = laptops.filter((laptop) => laptop.id === (Number(itemId)));
-
-  const handleBack = () => {
-    if (location.pathname === '/detail/:itemId') {
-      updateState(true);
-    } else {
-      updateState(!state);
-    }
-  };
 
   return (
     <>
@@ -35,7 +25,7 @@ const Detail = () => {
       {laptop
         ? (
           <div className="viewfinder">
-            <NavLink to="/" onClick={() => handleBack()} className="btn left"><img src={arrowLeft} alt="left" /></NavLink>
+            <NavLink to="/" className="btn left"><img src={arrowLeft} alt="left" /></NavLink>
             <div className="details">
               <div className="detail_img">
                 <img src={laptop.image} className="image-detail" alt="laptop" />

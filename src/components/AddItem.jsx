@@ -9,7 +9,7 @@ const AddItem = () => {
   const [title, setTitle] = useState('No Title');
   const [model, setModel] = useState('No Model');
   const [serial, setSerial] = useState('00-00-00');
-  const [image, setImage] = useState('https://picsum.photos/200/200');
+  const [image, setImage] = useState('https://picsum.photos/730/500');
   const [description, setDescription] = useState('Description');
   const [brand, setBrand] = useState('Asus');
 
