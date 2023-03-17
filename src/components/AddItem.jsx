@@ -15,6 +15,7 @@ const AddItem = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();

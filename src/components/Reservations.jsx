@@ -35,24 +35,34 @@ const Reserve = () => {
   return (
     <>
       <NavPrincipal />
-      <Link to="/" onClick={() => handleBack()}>Back</Link>
-      {
-        auth.first_name ? (
-          <div>
-            <h1>
-              Reservations
-            </h1>
+      <div className="viewfinder">
+        <Link to="/" onClick={() => handleBack()} className="btn left"><img src={arrowLeft} alt="left" /></Link>
+        {
+          auth.first_name ? (
             <div className="reserves">
-              {
-                reserves.map((reserve) => (
-                  <div key={reserve.id}>
-                    <strong>{reserve.title}</strong>
-                    {': '}
-                    <span>{reserve.date}</span>
-                    <button type="button" onClick={() => handleDelete(reserve.id)}>🗑</button>
-                  </div>
-                ))
-              }
+              <h1>
+                {`${auth.first_name} ${auth.last_name}`}
+                {' '}
+                Reservations
+              </h1>
+              <ul className="reserve_list">
+                <li className="reserve_details">
+                  <div className="model title">Model</div>
+                  <div className="date title">Date</div>
+                  <div className="action title">Delete</div>
+                </li>
+                {
+                  reserves.map((reserve) => (
+                    <li key={reserve.id} className="reserve_details">
+                      <div className="model">{reserve.title}</div>
+                      <div className="date">{reserve.date}</div>
+                      <div className="action">
+                        <button className="action_btn" type="button" onClick={() => handleDelete(reserve.id)}>🗑</button>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
           ) : <div className="msg_alert">Please login or register to manage reserves</div>
         }
