@@ -10,7 +10,7 @@ import Registration from './components/Registration';
 import AddItem from './components/AddItem';
 import DeleteItems from './components/DeleteItems';
 
-function App() {
+const App = () => {
   const location = useLocation();
   const id = location.state;
 
@@ -28,6 +28,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
