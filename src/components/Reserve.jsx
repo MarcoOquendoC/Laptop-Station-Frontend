@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Link, useLocation, useParams,
+  Link, useLocation, useParams, useNavigate,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservesInfo, addReserve, deleteReserve } from '../redux/Reserve/reserve';
@@ -10,7 +10,7 @@ import arrowLeft from '../images/left.svg';
 const Reserve = () => {
   const params = useParams();
   const { itemId } = params;
-
+  const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
   const reserves = useSelector((store) => store.reserves);
 
@@ -39,6 +39,7 @@ const Reserve = () => {
       item_id: itemId,
     };
     dispatch(addReserve(reserve));
+    navigate('/reservations');
   };
 
   const handleDelete = (reserveId) => {
@@ -54,15 +55,14 @@ const Reserve = () => {
           auth.first_name ? (
             <div>
               <h1>
-                {`${auth.first_name} ${auth.last_name}`}
-                {' '}
-                Reserves
+                New Reservation
               </h1>
               <form onSubmit={addReservation}>
                 <input className="date" onChange={(e) => setDate(e.target.value)} type="date" placeholder="2000-12-31" />
                 <button type="submit">Add</button>
               </form>
               <div className="reserves">
+                <h2>Reservations for this laptop</h2>
                 {
                   reserves.filter((r) => r.item_id === Number(itemId)).map((reserve) => (
                     <div key={reserve.id}>
