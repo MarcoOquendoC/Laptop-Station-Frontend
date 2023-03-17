@@ -108,8 +108,8 @@ const api = {
     return data;
   },
 
-  async deleteItemfetch() {
-    const response = await fetch(`${baseURL}/items`, deleteItemOptions());
+  async deleteItemfetch(id) {
+    const response = await fetch(`${baseURL}/items/${id}`, deleteItemOptions());
     const data = await response.json();
     return data;
   },
